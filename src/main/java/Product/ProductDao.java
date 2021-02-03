@@ -24,9 +24,10 @@ public class ProductDao {
         for (int i = 0; i < newProduct.size(); i++) {   
             if (fromDataBase.isEmpty()) {
                 em.persist(newProduct.get(i));
+
             } else {
                 for (int j = 0; j < fromDataBase.size(); j++) {
-                    if (!newProduct.get(i).getProductName().equals(fromDataBase.get(j).getProductName())) {
+                    if (!newProduct.get(i).equals(fromDataBase.get(j))) {
                         em.persist(newProduct.get(i));
                     }
                 }

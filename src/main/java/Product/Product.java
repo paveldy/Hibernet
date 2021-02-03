@@ -7,6 +7,7 @@ import java.util.Objects;
 @Table(name = "person")
 
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, updatable = false)
@@ -61,12 +62,13 @@ public class Product {
     public boolean equals(Object o) {
         if (this == o)  return true;
         if (o == null)  return false;
-        if (getClass() != o.getClass())
-            return false;
-        if (this.id !=0) return true;
+        if (getClass() != o.getClass()) return false;
         Product product = (Product) o;
+        if (this.id !=id&& this.productName.equals(product.productName)&&this.price==product.price) return true;
 
-        return productName==product.productName &&  price==product.price && id==product.id;
+
+
+        return productName.equals(product.productName) &&  price==product.price && id==product.id;
     }
 
 

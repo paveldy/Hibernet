@@ -20,13 +20,15 @@ public class Application {
         Product p6 = new Product("Carrot", 270);
 
 
+
         newProducts.add(p1);   /*потмо надо убрать это все, как-то некрасиво*/
         newProducts.add(p2);
         newProducts.add(p3);
         newProducts.add(p4);
         newProducts.add(p5);
         newProducts.add(p6);
-        newProducts.add(new Product("Milk", 110));
+//        newProducts.add(new Product("Milk", 110));
+//        newProducts.add(new Product("BioJogurt", 210));
 
 
         productDao.addProduct(newProducts); /*не работает*/
